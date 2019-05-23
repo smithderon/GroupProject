@@ -1,15 +1,24 @@
 
 //USE THIS FORMAT TO APPEND QUESTION TO A BLACK HIDER CARD
-        $("#hider-1").click(function () {
-            $(this).css("background-color", "transparent")
-        })
 
-        let url = "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple"
-            $.get(url).done((response) => {
-                var question = (response.results[0].question)
-                $("#hider-1").text(question)
+//for loop generates 9 questions from the API and appends them to hider cards
+let url = "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple"
+$.get(url).done((response) => {
+    for(i=1; i<10; i++){
+    $("#hider-"+i).text(response.results[i].question)
+    }
+})
 
-            })
+//for loop that removes each hider card and text on click
+for(i=1; i<10; i++){
+$("#hider-"+i).click(function () {
+    $(this).css("background-color", "transparent")
+    $(this).css("color", "transparent")
+})
+}
+
+
+
 
 
 
