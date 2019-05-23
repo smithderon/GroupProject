@@ -1,6 +1,8 @@
 
 //USE THIS FORMAT TO APPEND QUESTION TO A BLACK HIDER CARD
 
+//~~~~VIDEO GAME SECTION~~~~
+
 //for loop generates 9 questions from the API and appends them to hider cards
 let url = "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple"
 $.get(url).done((response) => {
@@ -18,6 +20,10 @@ $("#hider-"+i).click(function () {
 }
 
 
+//**** TO DO ****
+//1. make the other question categories
+//2. add multiple choice options to hider cards
+//3. make cards disappear when user answers question correcty, rather than clicking
 
 
 
@@ -25,6 +31,17 @@ $("#hider-"+i).click(function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+//DERON'S API EXTRACTORS
 
 // $(function(){
 // //Video juegos
