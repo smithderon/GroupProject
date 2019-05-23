@@ -1,6 +1,9 @@
 $(function(){
 //Video juegos
+
 ("$.#videoGames").addListener("on", "click", function(){
+  =======
+$(function(){
     $.get(`https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple`)
     .$.done(function (it) {
         return it.json()
@@ -18,6 +21,9 @@ $(function(){
 ("$.#gnk").addListener("on","click", function(){
     $.get(`https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple`)
     $.done(function (it) {
+=======
+    $.get(`https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple`)
+    .$.done(function (it) {
         return it.json()
     })
     $.done((returned) => {
@@ -26,10 +32,15 @@ $(function(){
 })
 
 //mixed
+
 ("$.#mixed").addListener("on","click",function(){
 
     $.get(`https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple`)
     $.done(function (it) {
+=======
+    $.get(`https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple`)
+    .$.done(function (it) {
+
         return it.json()
     })
     $.done((returned) => {
@@ -41,6 +52,9 @@ $(function(){
 (`$.#history`).addListener("on", "click", function(){
     $.get(`https://opentdb.com/api.php?amount=10&category=23`)
     $.done(function (it) {
+=======
+    $.get(`https://opentdb.com/api.php?amount=10&category=23`)
+    .$.done(function (it) {
         return it.json()
     })
     $.done((returned) => {
@@ -51,10 +65,14 @@ $(function(){
 ("$.#jap").addListener("on","click", function(){
     $.get(`https://opentdb.com/api.php?amount=10&category=31&difficulty=medium`)
     $.done(function (it) {
+=======
+    $.get(`https://opentdb.com/api.php?amount=10&category=31&difficulty=medium`)
+    .$.done(function (it) {
         return it.json()
     })
     $.done((returned) => {
         console.log(returned)
     })
 })
+=======
 })
