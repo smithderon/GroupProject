@@ -12,13 +12,32 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <style>
-        #bio{
+        #cv-container{
             height: 90vh;
             background-color: green;
+            align-items: center;
         }
         #test{
             height: 90vh;
             background-color: blue;
+        }
+        #bio{
+            height: 50%;
+        }
+        #projects{
+            height: 50%;
+        }
+        #project-row{
+            justify-content: space-around;
+        }
+        .project-button{
+            height: 150px;
+            background-color: white;
+        }
+        #cv-image{
+            width: 90%;
+            margin: 50% 0% 50% 0%;
+            padding: 0px;
         }
         </style>
 
@@ -37,13 +56,13 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">CV</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link" href="#">Projects</a>
                 </li>
             </ul>
         </div>
@@ -51,17 +70,22 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div id="bio" class="col-3">
-                hi
+            <div id="cv-container" class="col-3">
+                <img id="cv-image" src="images/cv.jpg" alt="">
             </div>
-            <div id="test" class="col-9">hi</div>
-                <div class="row">
-                    <div class="col-6">
-                        hi
-                    </div>
-                
-
+            <div id="test" class="col-9 p-0">
+                <div id="bio" style="background-color: pink; width: 100%;">
+                    Short Bio Here
                 </div>
+                <div id="projects" style="background-color: orange;">
+                    <div id="project-row" class="row h-100 align-items-center" style="background-color: red; margin: 0px;">
+                        <div class="col-2 project-button">Project 1</div>
+                        <div class="col-2 project-button">Project 2</div>
+                        <div class="col-2 project-button">Project 3</div>
+                        <div class="col-2 project-button">Project 4</div>
+                    </div>
+                </div>
+            </div>
             
         </div>
     </div>
