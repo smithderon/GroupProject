@@ -3,6 +3,7 @@
 
 <head>
     <title>Title</title>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -77,7 +78,8 @@
 
                 </div>
             </div>
-            <div id="hider-1" class="col" style="background-color: black">
+            <div id="hider-1" class="col" style="background-color: black; color: white;">
+                hi
             </div>
             <div id="hider-2"class="col">
                 <img src="images/Split Image/row-1-col-3.jpg">
@@ -110,6 +112,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -120,18 +124,27 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    <!-- jquery minified -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-    <script>
-        $("#hider").click(function () {
+    <script src="script/apiscript.js"></script>
+    
+    <!-- <script>
+        $("#hider-1").click(function () {
             $(this).css("background-color", "transparent")
         })
 
+        let url = "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple"
+            $.get(url).done((response) => {
+                var question = (response.results[0].question)
+                $("#hider-1").text(question)
+
+            })
+
+    </script> -->
 
 
 
-    </script>
 </body>
 
 </html>
