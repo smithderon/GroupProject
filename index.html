@@ -15,13 +15,23 @@
         img { 
             height: 33vh;
             width: 33vw;
+            margin: 0px;
+            padding: 0px;
         }
 
         .col {
             height: 33vh;
             width: 33vh;
-            background-color: black;
+            margin: 0px;
+            padding: 0px;
+
         }
+
+        #revealed-image-container{
+            background-image: url("images/galaxy.jpg");
+            background-size: 100% 100%
+        }
+
     </style>
 
 
@@ -59,7 +69,7 @@
     </nav>
 
     <!-- START OF IMAGE DIV CONTAINER -->
-    <div class="container-fluid p-0">
+    <div id="revealed-image-container" class="container-fluid p-0">
         <div class="row">
             <div class="col">
                 <img class="front" src="images/Split Image/row-1-col-1.jpg">
