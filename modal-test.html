@@ -126,18 +126,14 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
         <script>
+        //ADDS QUESTION TO MODAL
         let url = "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple"
         $.get(url).done((response) => {
             $("#question-modal").text(response.results[1].question)
             })
 
 
-            $(document).keydown(function(evt){
-                if (evt.keyCode===113){
-                evt.preventDefault();
-                $("#exampleModalCenter").modal('show');
-                }
-                });
+
         
         </script>
 
