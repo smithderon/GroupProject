@@ -1,29 +1,64 @@
+{/* <button data-dismiss= "modal" type="button" id="Answer4" class="btn btn-primary">Correct Answer</button>
+<button data-dismiss= "modal" type="button" id="Answer1" class="btn btn-primary">Answer 1</button>
+<button data-dismiss= "modal" type="button" id="answer2" class="btn btn-primary">Answer 2</button>
+<button data-dismiss= "modal" type="button" id="answer3" class="btn btn-primary">Answer 3</button> */}
 $(function(){
     let count = 0
 //Video juegos
+let factor = () => { min = Math.ceil(min);
+max = Math.floor(max);
+return Math.floor(Math.random() * (5 - 1)) + 1}
+let answerArray = []
+let modal = $("modalFoot").html()
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
+let answerCreation = function(answerArray){
+    for(var i = 1; i <= 4; i++){
+        let choice = `<button data-dismiss= "modal" type="button" id="Answer${i}" class="btn btn-primary"></button>`
+        answerArray.push(choice)
+        
+    }
+    shuffleArray(answerArray)
+    return answerArray
+}
     $("#btnModal").click(function(){
 
     
     $.get(`https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple`)
     .done(function (it){
-
-        console.log(it.results)
-        $("#question").html(it.results[count].question)
-        $("#Answer1").html(it.results[count].incorrect_answers[1])
-        $("#Answer2").html(it.results[count].incorrect_answers[2])
-        $("#Answer3").html(it.results[count].incorrect_answers[0])
+        answerCreation(answerArray)
+        for(var b = 0; b <= answerArray.length; b++){
+            if(typeof(b) == typeof(1)){
+            modal += answerArray[b]
+            }
+        }   
+        console.log(answerArray)
+        console.log(modal)
+        $("#question").html(it.results[count].question),
+        $("#Answer1").html(it.results[count].incorrect_answers[1]),
+        $("#Answer2").html(it.results[count].incorrect_answers[2]),
+        $("#Answer3").html(it.results[count].incorrect_answers[0]),
         $("#Answer4").html(it.results[count].correct_answer)
-
+    
     })
 })
-let wrong = () => {
-    for(let i = 0; i <= count; i ++){
-        $("#hider-" + i).html("Wow, looks like you failed, huh?")
-    }
-    count = 0 
-}
+// let wrong = () => {
+//     for(let i = 0; i <= count; i ++){
+//         $("#hider-" + i).html("Wow, looks like you failed, huh?")
+//     }
+//     count = 0 
+// }
 $("#Answer4").click(function(){
-    count += 1
+    count ++
     if (count != 5){
     $("#hider-" + count).html("Ohoho, Got it right, did ya? Click me, now!")
     }
@@ -47,15 +82,8 @@ $("#gnk").click( function(){
 })
 
 //mixed
-$("#mixed").click(function(){
 
 
-//for loop that removes each hider card and text on click
-for(i=1; i<10; i++){
-$("#hider-"+i).click(function () {
-    $(this).css("background-color", "transparent")
-    $(this).css("color", "transparent")
-})
 //History
 $(`#history`).click( function(){
     $.get(`https://opentdb.com/api.php?amount=10&category=23`)
@@ -76,30 +104,4 @@ $("#jap").click( function(){
         console.log(returned)
     })
 })
-}
 })
-})
-
-//ALFIE'S OLD CODE
-// //for loop generates 9 questions from the API and appends them to hider cards
-// let url = "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple"
-// $.get(url).done((response) => {
-//     for(i=1; i<10; i++){
-//     $("#hider-"+i).text(response.results[i].question)
-//     }
-// })
-
-
-
-
-
-
-
-
-
-
-//**** TO DO ****
-//1. make the other question categories
-//2. add multiple choice options to hider cards
-//3. make cards disappear when user answers question correcty, rather than clicking
-//4. make the modal appear with a keystroke rather than by clicking a button
